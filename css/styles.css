@@ -1,0 +1,268 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.chat-container {
+    display: flex;
+    width: 900px;
+    height: 600px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+.sidebar {
+    width: 300px;
+    height: 100vh;
+    background-color: #f5f5f5;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.logout-link {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.logout-link:hover {
+    text-decoration: underline;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    overflow-y: auto;
+    flex-grow: 1;
+}
+
+.contact-item {
+    border-bottom: 1px solid #ddd;
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+}
+
+.contact-link:hover {
+    background-color: #f0f0f0;
+}
+
+.contact-avatar {
+    margin-right: 10px;
+}
+
+.contact-avatar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-name {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.contact-status {
+    font-size: 12px;
+    color: #999;
+}
+
+
+.chat-box {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #efeae2;
+}
+
+.chat-header {
+    background-color: #075e54;
+    color: #fff;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.chat-messages {
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #c0c0c0 #f5f5f5;
+}
+
+.chat-messages::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-messages::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
+}
+
+.chat-messages::-webkit-scrollbar-thumb {
+    background-color: #c0c0c0;
+    border-radius: 8px;
+}
+
+.chat-input {
+    display: flex;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+}
+
+.chat-input input {
+    flex-grow: 1;
+    padding: 12px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    color: #333;
+    font-size: 16px;
+}
+
+.chat-input button {
+    padding: 12px 20px;
+    background-color: #25d366;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    margin-left: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.chat-input button:hover {
+    background-color: #1ebe57;
+}
+
+.message {
+    margin-bottom: 15px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    max-width: 60%;
+    font-size: 15px;
+}
+
+.message.sent {
+    background-color: #dcf8c6;
+    color: #333;
+    align-self: flex-end;
+    border-bottom-right-radius: 0;
+}
+
+.message.received {
+    background-color: #fff;
+    color: #333;
+    align-self: flex-start;
+    border-bottom-left-radius: 0;
+}
+
+.message strong {
+    display: block;
+    font-size: 13px;
+    margin-bottom: 5px;
+    color: #075e54;
+}
+
+ /* Estilo general para el contenedor de mensajes */
+.chat-messages {
+    padding: 10px; /* Espacio en el contenedor */
+    background-color: #e5ddd5; /* Fondo gris claro */
+    height: 100%;
+    overflow-y: auto; /* Desplazamiento vertical */
+    border-radius: 10px;
+    border: 1px solid #ddd; /* Borde sutil */
+    display: flex;
+    flex-direction: column; /* Mensajes de arriba hacia abajo */
+}
+
+/* Estilo para cada mensaje */
+.chat-message {
+    display: flex;
+    margin-bottom: 6px; /* Espacio entre mensajes */
+    max-width: 80%; /* Limita el ancho del mensaje */
+}
+
+/* Alineación de los mensajes salientes */
+.chat-message.outgoing {
+    justify-content: flex-end; /* Alinea a la derecha */
+}
+
+/* Alineación de los mensajes entrantes */
+.chat-message.incoming {
+    justify-content: flex-start; /* Alinea a la izquierda */
+}
+
+/* Estilo general para el cuadro de mensaje */
+.message-box {
+    padding: 8px 12px; /* Padding reducido */
+    border-radius: 12px;
+    background-color: #ffffff; /* Fondo blanco */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+    font-size: 14px; /* Tamaño de fuente */
+    line-height: 1.4;
+    word-wrap: break-word; /* Ajusta el texto largo */
+    max-width: calc(100% - 40px); /* Asegura que el cuadro no se desborde */
+}
+
+/* Estilo específico para los mensajes salientes */
+.chat-message.outgoing .message-box {
+    background-color: #dcf8c6; /* Fondo verde claro */
+    margin-left: auto; /* Pegado a la derecha */
+}
+
+/* Estilo específico para los mensajes entrantes */
+.chat-message.incoming .message-box {
+    background-color: #ffffff; /* Fondo blanco */
+    margin-right: auto; /* Pegado a la izquierda */
+}
+
+/* Estilo para la hora del mensaje */
+.message-time {
+    display: block;
+    font-size: 0.65em; /* Tamaño de fuente más pequeño */
+    color: #888; /* Color gris claro */
+    margin-top: 2px; /* Espacio entre el mensaje y la hora */
+    text-align: right; /* Alinea la hora a la derecha */
+}
